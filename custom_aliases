@@ -1,0 +1,40 @@
+
+######################
+##  CUSTOM ALIASES  ##
+######################
+
+
+#Listing
+alias ll='ls -lrtah'
+alias la='ls -A'
+alias ls='ls -G'
+
+# Process
+alias psgrep='ps auxwww | grep -v "grep" | grep -i'
+alias sb='sudo bash'
+
+# Helpers
+alias tcpopen='netstat -atp tcp | grep -i "listen"'
+alias gitlog='git log --pretty=format:"%h - %an, %ar : %s"'
+alias jsonify='python -m json.tool'
+alias meteo='curl -4 http://wttr.in/Alpedrete'
+alias vs='open -a "Visual Studio Code" '
+
+
+# Git and dev
+alias gco='git checkout '
+alias gpull="git pull"
+alias gopen="git-open"
+alias push+="push --set-upstream origin"
+alias be="bundle exec"
+alias knife="bundle exec knife"
+alias kt="be kitchen test"
+#alias vim=nvim
+alias nbranch="git checkout -b"
+
+# Terraform
+alias tf='terraform'
+alias tfa='terraform apply'
+alias tfp='terraform plan'
+
+
