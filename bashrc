@@ -87,10 +87,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-#golang
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -128,7 +124,10 @@ parse_git_branch() {
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 #GOPATH
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 export GOPATH=$(go env GOPATH)
+export PATH=$PATH:/usr/local/go/bin
 
 
 # Aliases

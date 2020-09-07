@@ -37,6 +37,7 @@ Plug 'w0rp/ale'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'liuchengxu/space-vim-dark'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-commentary'
 "Plug 'joshdick/onedark.vim'
 
 " Starlark
