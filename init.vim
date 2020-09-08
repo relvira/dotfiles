@@ -37,20 +37,25 @@ Plug 'w0rp/ale'
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'liuchengxu/space-vim-dark'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-commentary'
 "Plug 'joshdick/onedark.vim'
+
+" Starlark
+Plug 'cappyzawa/starlark.vim'
+
 
 " Go
 Plug 'fatih/vim-go', { 'for' : ['go','tmpl'] }
 Plug 'sebdah/vim-delve', { 'for' : 'go' } " requires go get -u github.com/derekparker/delve/cmd/dlv
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+
 
 " Ruby
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'haml', 'eruby'] }
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
 Plug 'tpope/vim-bundler', { 'for': 'ruby' }
-
-" NGINX
-Plug 'chr4/nginx.vim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -69,10 +74,8 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set guicursor=
 set background=light
-"colorscheme solarized
 syntax enable
 highlight clear Comment
-"highlight Comment guifg=#5E5E5E
 highlight Comment guifg=#8E9CA2
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 
@@ -88,6 +91,8 @@ let g:airline_powerline_fonts = 1
 " Github line plugin settings
 let g:gh_line_map_default = 0
 let g:gh_line_map = '<C-g>'
+let g:gh_open_command = 'fn() { echo "$@" > /home/relvira/gh-line.output; }; fn '
+
 
 "ctrl-p plugin settings
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\vendor\node_modules'
@@ -96,6 +101,11 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\vendor\node_modules'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+"Coc code completion
+"https://medium.com/@furkanbegen/go-development-with-vim-79cfa0a928b0
+let g:go_def_mapping_enabled = 0
+let g:coc_disable_startup_warning = 1
 
 
 " Rust
