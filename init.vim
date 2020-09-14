@@ -38,7 +38,11 @@ Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'liuchengxu/space-vim-dark'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-commentary'
-"Plug 'joshdick/onedark.vim'
+
+" Colors
+Plug 'altercation/vim-colors-solarized'
+Plug 'joshdick/onedark.vim'
+Plug 'arcticicestudio/nord-vim'
 
 " Starlark
 Plug 'cappyzawa/starlark.vim'
@@ -73,7 +77,8 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set guicursor=
-set background=light
+set background=dark
+colorscheme nord
 syntax enable
 highlight clear Comment
 highlight Comment guifg=#8E9CA2
