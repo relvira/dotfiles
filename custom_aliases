@@ -29,7 +29,7 @@ alias push+="push --set-upstream origin"
 alias be="bundle exec"
 alias knife="bundle exec knife"
 alias kt="be kitchen test"
-#alias vim=nvim
+alias vim=nvim
 alias nbranch="git checkout -b"
 
 # Terraform
