@@ -60,7 +60,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #load custom aliases
-source ~/.dotfiles/custom_aliases
+source ~/src/dotfiles/custom_aliases
 
 # Custom keyboard bindings
 bindkey -e
