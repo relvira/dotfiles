@@ -18,7 +18,7 @@ Plug 'nightsense/snow'
 Plug 'tpope/vim-sensible'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-fugitive'
-Plug 'git://git.wincent.com/command-t.git'
+Plug 'wincent/command-t'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'bling/vim-airline'
@@ -215,6 +215,7 @@ au BufRead,BufNewFile *.ex setfiletype elixir
 au BufRead,BufNewFile *.exs setfiletype elixir
 au BufRead,BufNewFile *.lfe setfiletype lfe
 au BufRead,BufNewFile *.todo setfiletype todo
+au BufRead,BufNewFile *.sky setfiletype starlark
 
 " ale linter
 let g:ale_sign_error = '⤫'
