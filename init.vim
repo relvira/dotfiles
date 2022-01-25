@@ -18,7 +18,7 @@ Plug 'nightsense/snow'
 Plug 'tpope/vim-sensible'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-fugitive'
-Plug 'git://git.wincent.com/command-t.git'
+Plug 'wincent/command-t'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'bling/vim-airline'
@@ -215,10 +215,18 @@ au BufRead,BufNewFile *.ex setfiletype elixir
 au BufRead,BufNewFile *.exs setfiletype elixir
 au BufRead,BufNewFile *.lfe setfiletype lfe
 au BufRead,BufNewFile *.todo setfiletype todo
+au BufRead,BufNewFile *.sky setfiletype starlark
 
 " ale linter
 let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
+"let g:ale_linters = {'chef': ['cookstyle','foodcritic']}
+
+" ale fixers, fix on save enabled
+let g:ale_fixers = ['remove_trailing_lines', 'trim_whitespace']
+let g:ale_fix_on_save = 1
+
+autocmd BufNewFile,BufRead */site-cookbooks/*.rb set ft=chef syntax=ruby
 
 " Go
 let g:go_highlight_types = 1 " This is part of vim-go
@@ -259,7 +267,7 @@ let g:go_echo_command_info=0 " Don't show errors, for example gometalinter FAIL 
 " Terraform
 " call terraform fmt on save
 let g:terraform_fmt_on_save = 1
-let g:terraform_fold_sections=1
+let g:terraform_fold_sections=0
 let g:terraform_align=1
 
 " maps
