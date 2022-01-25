@@ -1,5 +1,9 @@
 #!/bin/bash
 
+mkdir -p ~/.config/nvim/
+mkdir -p ~/.tmux/plugins/
+mkdir -p ~/.local/share/nvim/
+
 bashrc_path=~/.bashrc
 if test -f "$bashrc_path"; then
   mv $bashrc_path ~/.bashrc.old
@@ -21,4 +25,3 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ln -s ~/src/dotfiles/bashrc ~/.bashrc
 ln -s ~/src/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/src/dotfiles/init.vim ~/.config/nvim/init.vim
-
