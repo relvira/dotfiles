@@ -35,6 +35,9 @@ DISABLE_AUTO_TITLE="true"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/ret/.gem/ruby/1.8/bin:/opt/nginx/sbin:$HOME/.cargo/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# Disable noisy zsh
+ZSH_DISABLE_COMPFIX=true
+
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
@@ -105,7 +108,7 @@ function gh() {
   open $giturl
 }
 
-if [ "$(hostname)" = "DUB-M-RELVIRA01" ]; then
+if [ "$(hostname)" = "DUB-M-RELVIRA01" ] || [ "$(hostname)" = "relvira-C02F71EAMD6R" ]; then
   # Load SSH keys into agent forwarder
   ssh-add -K
 
@@ -123,3 +126,7 @@ if [ "$(hostname)" = "DUB-M-RELVIRA01" ]; then
 
 fi
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
