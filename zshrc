@@ -5,10 +5,10 @@ export ZSH=~/.oh-my-zsh
 export EDITOR="nvim"
 export CHEF_REPO="~/src/chef-repo"
 
-SOBOLE_THEME_MODE=dark
+#SOBOLE_THEME_MODE=dark
 
 #ZSH_THEME="maran"
-ZSH_THEME="afowler"
+#ZSH_THEME="afowler"
 #ZSH_THEME="sunaku"
 #ZSH_THEME="powerlevel9k/powerlevel9k"
 #ZSH_THEME="gentoo"
@@ -47,21 +47,6 @@ else
   export EDITOR='nvim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 #load custom aliases
 source ~/src/dotfiles/custom_aliases
 
@@ -69,12 +54,6 @@ source ~/src/dotfiles/custom_aliases
 bindkey -e
 bindkey '^[^[[C' forward-word
 bindkey '^[^[[D' backward-word
-
-#export GOPATH="$(go env GOPATH)"
-
-
-#Add ssh private key to ssh-agent
-#ssh-add ~/.ssh/id_rsa > /dev/null
 
 function iterm_title {
     echo -ne "\033]0;"$*"\007"
@@ -108,6 +87,10 @@ function gh() {
   open $giturl
 }
 
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 if [ "$(hostname)" = "relvira-C02F71EAMD6R" ] || [ "$(hostname)" = "relvira-ltm64uf.internal.salesforce.com" ] || [ "$(hostname)" = "relvira-wsmbg2e.internal.salesforce.com" ]; then
   # Load SSH keys into agent forwarder
   ssh-add -K
@@ -117,9 +100,13 @@ if [ "$(hostname)" = "relvira-C02F71EAMD6R" ] || [ "$(hostname)" = "relvira-ltm6
   # Exported vars
   export GIT_VERSION='111111111.11111111.111111111'
 
+  # Update prompt to show branch name
+  PROMPT='%{$fg[green]%}%~%{$fg_bold[blue]%}$(parse_git_branch)%{$reset_color%} $ '
 
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
