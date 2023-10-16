@@ -138,6 +138,10 @@ export GOPATH=$(go env GOPATH)
 export PATH=$PATH:/usr/local/go/bin
 
 
+# nvim
+export PATH=$PATH:/usr/local/bin
+
+
 # Aliases
 alias gco="git checkout"
 alias nbranch="git checkout -b"
@@ -147,3 +151,11 @@ alias gh="cat /home/relvira/gh-line.output"
 alias vim="nvim"
 alias ft="find_trailhead"
 export EDITOR="nvim"
+
+##############################################
+export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+##############################################
+# PDE SETUP || 2023-10-16T09:40:10+0200
+##############################################
+/usr/bin/ssh-add --apple-load-keychain >/dev/null 2>&1
+##############################################
